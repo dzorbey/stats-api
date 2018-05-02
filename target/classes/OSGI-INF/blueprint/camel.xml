@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Licensed to the Apache Software Foundation (ASF) under one or more contributor 
+	license agreements. See the NOTICE file distributed with this work for additional 
+	information regarding copyright ownership. The ASF licenses this file to 
+	You under the Apache License, Version 2.0 (the "License"); you may not use 
+	this file except in compliance with the License. You may obtain a copy of 
+	the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required 
+	by applicable law or agreed to in writing, software distributed under the 
+	License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS 
+	OF ANY KIND, either express or implied. See the License for the specific 
+	language governing permissions and limitations under the License. -->
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 https://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
+    <bean class="nl.advidi.camel.rest.FlowApi" id="flow"/>
+    
+    
+    
+    <camelContext id="statsApi" xmlns="http://camel.apache.org/schema/blueprint">
+        <restConfiguration apiContextListing="true"
+            apiContextPath="api-docs" bindingMode="json"
+            component="jetty" contextPath="stats-osgi/rest"
+            enableCORS="true" host="localhost" port="8585">
+            <!-- we want json output in pretty mode -->
+            <dataFormatProperty key="prettyPrint" value="true"/>
+            <!-- setup swagger api descriptions -->
+            <apiProperty key="base.path" value="v1.0"/>
+            <apiProperty key="api.version" value="1.0.0"/>
+            <apiProperty key="api.title" value="Stats Services"/>
+            <apiProperty key="api.description" value="Camel Rest Stats services"/>
+            <apiProperty key="api.contact.name" value="Stats Service consultants team"/>
+        </restConfiguration>
+        <!-- defines the rest services using the context-path /user -->
+        <rest consumes="application/json" path="/stats" produces="application/json">
+            <description>Stats Rest Service</description>
+            <!-- this is a rest POST to create an account -->
+            <post outType="nl.advidi.camel.model.AvgClosePriceResponse" 
+                    type="nl.advidi.camel.model.AvgPriceRequest"   uri="/averageClosePriceOverPeriod">
+                <description>Get AverageClosePrice over a period</description>
+                <param dataType="string" description=""
+                    name="body" type="body"/>
+                <route>
+                    <marshal id="_marshal1">
+                        <json library="Jackson"/>
+                    </marshal>
+                    <log id="_log1" message="${body}"/>
+                    <to uri="bean:flow?method=getAverageClosePriceOverPeriod(${body})"/>
+                </route>
+            </post>
+            
+            <post outType="nl.advidi.camel.model.ClosePriceResponse" 
+                     type="nl.advidi.camel.model.PriceRequest" uri="/closePriceAt">
+                <description>Get ClosePrice at a given date</description>
+                <param dataType="string" description="Calculation Date"
+                    name="body" type="body"/>
+                <route>
+                    <marshal id="_marshal2">
+                        <json library="Jackson"/>
+                    </marshal>
+                    <log id="_log2" message="${body}"/>
+                    <to uri="bean:flow?method=getClosePriceAt(${body})"/>
+                </route>
+            </post>
+            
+        </rest>
+    </camelContext>
+    
+    
+    
+</blueprint>

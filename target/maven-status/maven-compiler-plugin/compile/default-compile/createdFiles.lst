@@ -1,0 +1,14 @@
+nl\advidi\camel\utilities\Utility.class
+nl\advidi\camel\utilities\ConfigProperties.class
+nl\advidi\camel\model\AvgClosePriceData.class
+nl\advidi\camel\model\ErrorResponse.class
+nl\advidi\rest\client\StatsClient.class
+nl\advidi\camel\rest\FlowApi.class
+nl\advidi\rest\service\CSVReader.class
+nl\advidi\camel\model\ClosePriceData.class
+nl\advidi\rest\service\StatsService.class
+nl\advidi\camel\model\AvgClosePriceResponse.class
+nl\advidi\camel\model\ClosePriceResponse.class
+nl\advidi\camel\model\AbstractResponse.class
+nl\advidi\camel\model\PriceRequest.class
+nl\advidi\camel\model\AvgPriceRequest.class
