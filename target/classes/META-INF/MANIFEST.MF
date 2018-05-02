@@ -1,13 +1,13 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1525284614429
+Bnd-LastModified: 1525284902421
 Build-Jdk: 1.8.0_144
 Built-By: Delikan
 Bundle-Blueprint: OSGI-INF/blueprint/camel.xml
 Bundle-Description: An OSGI-compliant Apache Camel server framework
 Bundle-License: http://unlicense.org
 Bundle-ManifestVersion: 2
-Bundle-Name: advidi-camel-api
-Bundle-SymbolicName: nl.advidi.camel.advidi-camel-api
+Bundle-Name: stats-camel-api
+Bundle-SymbolicName: nl.stats.camel.stats-camel-api
 Bundle-Version: 1.0.0.SNAPSHOT
 Created-By: Apache Maven Bundle Plugin
 Export-Package: org.codehaus.jackson;version="1.9.2";uses:="org.codehaus
@@ -406,6 +406,6 @@ Import-Package: io.swagger.annotations;version="[1.5,2)",javax.ws.rs;ver
  rg.apache.commons.logging;version="[1.2,2)",org.apache.commons.logging.
  impl;version="[1.2,2)",javax.net.ssl,javax.net,javax.security.auth.x500
  ,javax.security.cert
-Karaf-Info: Camel;advidi-camel-api=1.0.0-SNAPSHOT
+Karaf-Info: Camel;stats-camel-api=1.0.0-SNAPSHOT
 Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.7))"
 Tool: Bnd-3.3.0.201609221906
