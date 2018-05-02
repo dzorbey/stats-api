@@ -1,8 +1,35 @@
+# Overview
+
+This project is a camel api implementation with the main functionality to process the given historical stock data of a given company in a predefined .csv format and expose certain functional endpoints that will manipulate and transform the existing historical data via a predefined statistical transformation. 
+
+Such as : 
+    
+    exposing the close price info at a given date.
+    exposing the average close price of a stock between a given interval.  
+
+
+The resource csv file thats been used is "FORD.csv", which is under /test folder of the project. 
+
+
+
 # Deployment
 
 In the development and deployment apache-servicemix-7.0.1.zip version is used, and you can install it via the following link:
 
 http://www.apache.org/dyn/closer.lua/servicemix/servicemix-7/7.0.1/apache-servicemix-7.0.1.zip
+
+ServiceMix does not come with a default configuration folder which the installed bundles can refer seamlessly, so for this project we create a new folder "conf" under */apache-servicemix-7.0.1 path.  
+
+
+![alt text](test/img/servicemix-conf.png)
+
+and later on we put our /test/api.properties file under the conf directory. YOU NEED TO UPDATE THE API.PROPERTIES FILE with the exact path of your local copy of the "FORD.csv" file.
+
+
+![alt text](test/img/properties.png)
+
+
+
 
 later on you can run the servicemix via the command "/apache-servicemix-7.0.1/bin/servicemix.bat". 
 
@@ -23,7 +50,7 @@ Click on:
       
 http://localhost:8181/system/console/bundles
        
-This is the main bundle list view and where the stats-api is going to be installed. After a "mvn clean install" the jar file created should under your local maven directory as stated on the command line. 
+This is the main bundle list view and where the stats-api is going to be installed. After a "mvn clean install" the jar file created should be under your local maven directory as stated on the command line. 
 
 Ex: 
       
@@ -35,7 +62,7 @@ You can install the bundle via the the Install/Update button.
 ![alt text](test/img/bundle-install.png)
 
 
-Later on you can check the deployment of the bundle being successful or checking the logs by "log:display" on karaf command line, also if the deployment is successful and the stats-api is up and running you can check the swagger documentation for the api via the link:
+Later on you can check the deployment of the bundle being successful or checking the logs by "log:display" on karaf command line, also if the deployment is successful and whether the stats-api is up and running or not you can check the swagger documentation for the api via the link:
 
 http://localhost:8585/stats-osgi/rest/api-docs/statsApi
 
@@ -50,5 +77,18 @@ https://editor.swagger.io
       
 # Testing
 
-There are implemented soapui tests under "/test/soap/" directory.
+There are implemented soapui tests under "/test/soap/" directory. The request and response objects are designed to be mapped into their json equivalent class models which are referred also in the camel.xml file.
+
+
+closePriceAt call :
+      
+     
+![alt text](test/img/closePriceAt.png)
+      
+       
+      
+averageClosePriceOverPeriod call :
+
+![alt text](test/img/averageClosePriceOverPeriod.png)
+      
       
