@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1525285277809
+Bnd-LastModified: 1525285451873
 Build-Jdk: 1.8.0_144
 Built-By: Delikan
 Bundle-Blueprint: OSGI-INF/blueprint/camel.xml
