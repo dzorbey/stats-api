@@ -87,6 +87,7 @@ https://editor.swagger.io
       
       
       
+      
 # Testing
 
 There are implemented soapui tests under "/test/soap/" directory. The request and response objects are designed to be mapped into their json equivalent class models which are referred also in the camel.xml file.
@@ -102,5 +103,14 @@ closePriceAt call :
 averageClosePriceOverPeriod call :
 
 ![alt text](test/img/averageClosePriceOverPeriod.png)
+      
+      
+ 
+ 
+ You can choose to remove the bundle from the servicemix once you are finished, and repeat the process once again.
+ 
+ 
+![alt text](test/img/bundle_list.png)
+ 
       
       
