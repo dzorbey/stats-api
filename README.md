@@ -50,6 +50,8 @@ Click on:
       
 http://localhost:8181/system/console/bundles
 
+And make sure that your [8181,8585] ports are not allocated to some other operations in your machine.
+
 If the servicemix has not been installed before, initially it might ask for a username/password to reach the webconsole features.
 
 
@@ -57,6 +59,7 @@ username : smx
      
            
 password : smx
+       
 
        
 This is the main bundle list view and where the stats-api is going to be installed. After a "mvn clean install" the jar file created should be under your local maven directory as stated on the command line. 
