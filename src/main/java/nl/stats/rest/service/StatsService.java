@@ -29,9 +29,7 @@ public class StatsService {
 			int dataSize = 0;
 			BigDecimal accumulatedPrice = new BigDecimal(0);
 			while (it.hasNext()) {
-
 				Map.Entry<Date, BigDecimal> iterateOver = (Map.Entry<Date, BigDecimal>) it.next();
-				System.out.println("Key is: " + iterateOver.getKey() + "  - " + " Value is: " + iterateOver.getValue());
 				accumulatedPrice = accumulatedPrice.add(iterateOver.getValue());
 				dataSize++;
 			}
