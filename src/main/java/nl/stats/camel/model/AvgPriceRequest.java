@@ -1,4 +1,4 @@
-package nl.advidi.camel.model;
+package nl.stats.camel.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -16,17 +16,30 @@ import io.swagger.annotations.*;
 @XmlRootElement
 @Consumes("application/json")
 @Produces("application/json")
-public class PriceRequest {
+public class AvgPriceRequest {
 
-	@JsonProperty("date")
-	private @Valid String date = null;
+	@JsonProperty("startDate")
+	private @Valid String startDate = null;
+
+	@JsonProperty("endDate")
+	private @Valid String endDate = null;
 
 	@ApiModelProperty(value = "")
-	public String getDate() {
-		return date;
+	public String getStartDate() {
+		return startDate;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
 	}
+
+	@ApiModelProperty(value = "")
+	public String getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
+
 }

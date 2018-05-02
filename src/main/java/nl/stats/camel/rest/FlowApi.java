@@ -1,7 +1,8 @@
-package nl.advidi.camel.rest;
+package nl.stats.camel.rest;
 
 import javax.validation.Valid;
-import nl.advidi.rest.client.StatsClient;
+
+import nl.stats.rest.client.StatsClient;
 
 public class FlowApi {
 	public static StatsClient statsClient = new StatsClient();

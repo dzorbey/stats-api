@@ -11,10 +11,7 @@
 	language governing permissions and limitations under the License. -->
 <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 https://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
-    <bean class="nl.advidi.camel.rest.FlowApi" id="flow"/>
-    
-    
-    
+    <bean class="nl.stats.camel.rest.FlowApi" id="flow"/>
     <camelContext id="statsApi" xmlns="http://camel.apache.org/schema/blueprint">
         <restConfiguration apiContextListing="true"
             apiContextPath="api-docs" bindingMode="json"
@@ -33,11 +30,10 @@
         <rest consumes="application/json" path="/stats" produces="application/json">
             <description>Stats Rest Service</description>
             <!-- this is a rest POST to create an account -->
-            <post outType="nl.advidi.camel.model.AvgClosePriceResponse" 
-                    type="nl.advidi.camel.model.AvgPriceRequest"   uri="/averageClosePriceOverPeriod">
+            <post outType="nl.stats.camel.model.AvgClosePriceResponse"
+                type="nl.stats.camel.model.AvgPriceRequest" uri="/averageClosePriceOverPeriod">
                 <description>Get AverageClosePrice over a period</description>
-                <param dataType="string" description=""
-                    name="body" type="body"/>
+                <param dataType="string" description="" name="body" type="body"/>
                 <route>
                     <marshal id="_marshal1">
                         <json library="Jackson"/>
@@ -46,9 +42,8 @@
                     <to uri="bean:flow?method=getAverageClosePriceOverPeriod(${body})"/>
                 </route>
             </post>
-            
-            <post outType="nl.advidi.camel.model.ClosePriceResponse" 
-                     type="nl.advidi.camel.model.PriceRequest" uri="/closePriceAt">
+            <post outType="nl.stats.camel.model.ClosePriceResponse"
+                type="nl.stats.camel.model.PriceRequest" uri="/closePriceAt">
                 <description>Get ClosePrice at a given date</description>
                 <param dataType="string" description="Calculation Date"
                     name="body" type="body"/>
@@ -60,10 +55,6 @@
                     <to uri="bean:flow?method=getClosePriceAt(${body})"/>
                 </route>
             </post>
-            
         </rest>
     </camelContext>
-    
-    
-    
 </blueprint>

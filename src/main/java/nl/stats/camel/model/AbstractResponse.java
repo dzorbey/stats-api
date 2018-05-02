@@ -1,4 +1,4 @@
-package nl.advidi.camel.model;
+package nl.stats.camel.model;
 
 import javax.validation.Valid;
 import javax.ws.rs.Produces;

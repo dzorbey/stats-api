@@ -1,4 +1,4 @@
-package nl.advidi.camel.model;
+package nl.stats.camel.model;
 
 import javax.validation.Valid;
 import javax.ws.rs.Produces;
@@ -14,17 +14,17 @@ import io.swagger.annotations.ApiModelProperty;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @XmlRootElement
 @Produces("application/json")
-public class ClosePriceResponse extends AbstractResponse {
+public class AvgClosePriceResponse extends AbstractResponse {
 
 	@JsonProperty("data")
-	private @Valid ClosePriceData data = null;
+	private @Valid AvgClosePriceData data = null;
 
 	@ApiModelProperty(value = "")
-	public ClosePriceData getData() {
+	public AvgClosePriceData getData() {
 		return data;
 	}
 
-	public void setData(ClosePriceData data) {
+	public void setData(AvgClosePriceData data) {
 		this.data = data;
 	}
 }

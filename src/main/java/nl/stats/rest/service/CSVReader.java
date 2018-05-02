@@ -1,4 +1,4 @@
-package nl.advidi.rest.service;
+package nl.stats.rest.service;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -8,7 +8,8 @@ import java.text.ParseException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.TreeMap;
-import nl.advidi.camel.utilities.Utility;
+
+import nl.stats.camel.utilities.Utility;
 
 public class CSVReader {
 	public static String filePath = Utility.prop.getProperty("filePath");

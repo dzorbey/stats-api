@@ -1,11 +1,11 @@
-package nl.advidi.camel.utilities;
+package nl.stats.camel.utilities;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Properties;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import nl.advidi.camel.model.ErrorResponse;
+import nl.stats.camel.model.ErrorResponse;
 
 public class Utility {
 	public static ObjectMapper objectMapper = new ObjectMapper();

@@ -1,4 +1,4 @@
-package nl.advidi.rest.service;
+package nl.stats.rest.service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -8,13 +8,13 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
-import nl.advidi.camel.model.AvgClosePriceData;
-import nl.advidi.camel.model.AvgPriceRequest;
-import nl.advidi.camel.model.ClosePriceData;
-import nl.advidi.camel.model.ClosePriceResponse;
-import nl.advidi.camel.model.PriceRequest;
-import nl.advidi.camel.model.AvgClosePriceResponse;
-import nl.advidi.camel.utilities.Utility;
+import nl.stats.camel.model.AvgClosePriceData;
+import nl.stats.camel.model.AvgClosePriceResponse;
+import nl.stats.camel.model.AvgPriceRequest;
+import nl.stats.camel.model.ClosePriceData;
+import nl.stats.camel.model.ClosePriceResponse;
+import nl.stats.camel.model.PriceRequest;
+import nl.stats.camel.utilities.Utility;
 
 public class StatsService {
 	public static TreeMap<Date, BigDecimal> closePrices = CSVReader.loadData();

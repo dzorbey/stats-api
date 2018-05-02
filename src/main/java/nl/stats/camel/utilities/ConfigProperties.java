@@ -1,4 +1,4 @@
-package nl.advidi.camel.utilities;
+package nl.stats.camel.utilities;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -1,9 +1,9 @@
-package nl.advidi.rest.client;
+package nl.stats.rest.client;
 
-import nl.advidi.camel.model.AvgPriceRequest;
-import nl.advidi.camel.model.PriceRequest;
-import nl.advidi.camel.utilities.Utility;
-import nl.advidi.rest.service.StatsService;
+import nl.stats.camel.model.AvgPriceRequest;
+import nl.stats.camel.model.PriceRequest;
+import nl.stats.camel.utilities.Utility;
+import nl.stats.rest.service.StatsService;
 
 public class StatsClient {
 	public static StatsService service = new StatsService();
