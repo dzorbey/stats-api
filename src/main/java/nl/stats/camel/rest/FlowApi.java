@@ -1,7 +1,6 @@
 package nl.stats.camel.rest;
 
 import javax.validation.Valid;
-
 import nl.stats.rest.client.StatsClient;
 
 public class FlowApi {
