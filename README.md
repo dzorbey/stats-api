@@ -49,6 +49,15 @@ Running on Karaf command line:
 Click on:
       
 http://localhost:8181/system/console/bundles
+
+If the servicemix has not been installed before, initially it might ask for a username/password to reach the webconsole features.
+
+
+username : smx
+     
+           
+password : smx
+
        
 This is the main bundle list view and where the stats-api is going to be installed. After a "mvn clean install" the jar file created should be under your local maven directory as stated on the command line. 
 
@@ -57,7 +66,7 @@ Ex:
       nl/stats/camel/stats-camel-api/1.0.0-SNAPSHOT/stats-camel-api-1.0.0-SNAPSHOT.jar
 
       
-You can install the bundle via the the Install/Update button.
+You can install the bundle via the the Install/Update button. Do not forget to check the Start Bundle, and Refresh Package checkboxes at all times.
 
 ![alt text](test/img/bundle-install.png)
 
