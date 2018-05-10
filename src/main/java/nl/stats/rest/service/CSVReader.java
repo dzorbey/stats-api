@@ -36,4 +36,31 @@ public class CSVReader {
         }
         return new TreeMap<Date, BigDecimal>(prices);
     }
+
+
+
+    public static TreeMap<Date, BigDecimal> loadData(String filePath) {
+    	HashMap<Date, BigDecimal> prices = new HashMap<>();
+    	
+        String csvFile = filePath;
+        String line = "";
+        String cvsSplitBy = ",";
+
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            while ((line = br.readLine()) != null) {
+                String[] resource = line.split(cvsSplitBy);
+
+                try {
+                	prices.put((Date)Utility.formatter.parse(resource[0]), new BigDecimal((resource[4])));
+				} catch (ParseException e) {
+					continue;
+				}
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return new TreeMap<Date, BigDecimal>(prices);
+    }
+
+
 }

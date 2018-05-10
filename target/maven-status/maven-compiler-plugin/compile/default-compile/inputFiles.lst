@@ -8,6 +8,7 @@ C:\Users\Delikan\Documents\stats-api\src\main\java\nl\stats\camel\model\Abstract
 C:\Users\Delikan\Documents\stats-api\src\main\java\nl\stats\camel\model\AvgClosePriceData.java
 C:\Users\Delikan\Documents\stats-api\src\main\java\nl\stats\camel\model\AvgClosePriceResponse.java
 C:\Users\Delikan\Documents\stats-api\src\main\java\nl\stats\camel\model\PriceRequest.java
+C:\Users\Delikan\Documents\stats-api\src\main\java\nl\stats\camel\test\Markov.java
 C:\Users\Delikan\Documents\stats-api\src\main\java\nl\stats\rest\client\StatsClient.java
 C:\Users\Delikan\Documents\stats-api\src\main\java\nl\stats\rest\service\CSVReader.java
 C:\Users\Delikan\Documents\stats-api\src\main\java\nl\stats\camel\model\ClosePriceData.java
