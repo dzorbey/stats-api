@@ -111,7 +111,12 @@ public class MarkovService {
 		int incWhileDec = 0;
 		int decWhileInc = 0;
 		int decWhileDec = 0;
-		int noChange = 0;
+		int noChangeWhileDec = 0;
+		int noChangeWhileInc = 0;
+		int noChangeWhileNoChange = 0;
+		int incWhileNoChange = 0;
+        int decWhileNoChange = 0;
+		
 		Double lowerThanPrevious = 0.0; 
 		
 		while (it.hasNext()) {
@@ -139,9 +144,22 @@ public class MarkovService {
 			if((checkCurrent < previous) && (previous < lowerThanPrevious)) {
 			     decWhileDec++;	
 			}
+	
+			if((checkCurrent > previous) && (previous.equals(lowerThanPrevious))) {
+			     incWhileNoChange++;	
+			}
+			if((checkCurrent < previous) && (previous.equals(lowerThanPrevious))) {
+			     decWhileNoChange++;	
+			}
 			
-			if(checkCurrent.equals(previous)) {
-			     noChange++;	
+			if((checkCurrent.equals(previous)) && (previous < lowerThanPrevious)) {
+			     noChangeWhileDec++;	
+			}			
+			if((checkCurrent.equals(previous)) && (previous > lowerThanPrevious)) {
+			     noChangeWhileInc++;	
+			}
+			if((checkCurrent.equals(previous)) && (previous.equals(lowerThanPrevious))) {
+			     noChangeWhileNoChange++;	
 			}
 			
 		}
@@ -150,7 +168,11 @@ public class MarkovService {
 		System.out.println("incWhileDec : " + incWhileDec);
 		System.out.println("decWhileInc : " + decWhileInc);
 		System.out.println("decWhileDec : " + decWhileDec);
-		System.out.println("noChange : " + noChange);
+		System.out.println("noChangeWhileDec : " + noChangeWhileDec);
+		System.out.println("noChangeWhileInc : " + noChangeWhileInc);
+		System.out.println("noChangeWhileNoChange : " + noChangeWhileNoChange);
+		System.out.println("incWhileNoChange : " + incWhileNoChange);
+		System.out.println("decWhileNoChange : " + decWhileNoChange);
 		
 		
 	}
